@@ -1,0 +1,539 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ImageStorageOptimizer/1.0.0": {
+        "dependencies": {
+          "CoenM.ImageSharp.ImageHash": "1.3.6",
+          "Zafiro.FileSystem.Local": "9.0.4"
+        },
+        "runtime": {
+          "ImageStorageOptimizer.dll": {}
+        }
+      },
+      "CoenM.ImageSharp.ImageHash/1.3.6": {
+        "dependencies": {
+          "SixLabors.ImageSharp": "2.1.3"
+        },
+        "runtime": {
+          "lib/net6.0/CoenM.ImageSharp.ImageHash.dll": {
+            "assemblyVersion": "1.3.6.25915",
+            "fileVersion": "1.3.6.25915"
+          }
+        }
+      },
+      "CSharpFunctionalExtensions/2.42.0": {
+        "runtime": {
+          "lib/net6.0/CSharpFunctionalExtensions.dll": {
+            "assemblyVersion": "2.42.0.0",
+            "fileVersion": "2.42.0.0"
+          }
+        }
+      },
+      "DynamicData/8.4.1": {
+        "dependencies": {
+          "System.Reactive": "6.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/DynamicData.dll": {
+            "assemblyVersion": "8.4.0.0",
+            "fileVersion": "8.4.1.20756"
+          }
+        }
+      },
+      "JetBrains.Annotations/2023.3.0": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "4242.42.42.42",
+            "fileVersion": "2023.3.0.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.1.1": {
+        "runtime": {
+          "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "4.700.20.56604"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/8.0.0": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/5.0.0": {},
+      "Microsoft.Reactive.Testing/5.0.0": {
+        "dependencies": {
+          "System.Reactive": "6.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Reactive.Testing.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "morelinq/4.2.0": {
+        "runtime": {
+          "lib/net8.0/MoreLinq.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.2.0.0"
+          }
+        }
+      },
+      "NodaTime/3.0.10": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NodaTime.dll": {
+            "assemblyVersion": "3.0.10.0",
+            "fileVersion": "3.0.10.0"
+          }
+        }
+      },
+      "Optional/4.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Optional.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "ReactiveUI/20.1.1": {
+        "dependencies": {
+          "DynamicData": "8.4.1",
+          "Splat": "15.1.1",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/ReactiveUI.dll": {
+            "assemblyVersion": "20.1.0.0",
+            "fileVersion": "20.1.1.46356"
+          }
+        }
+      },
+      "Serilog/2.10.0": {
+        "runtime": {
+          "lib/netstandard2.1/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.10.0.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/2.1.3": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.3.0"
+          }
+        }
+      },
+      "Splat/15.1.1": {
+        "runtime": {
+          "lib/net8.0/Splat.dll": {
+            "assemblyVersion": "15.1.0.0",
+            "fileVersion": "15.1.1.17670"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {},
+      "System.IO.Abstractions/19.2.69": {
+        "dependencies": {
+          "TestableIO.System.IO.Abstractions": "19.2.69",
+          "TestableIO.System.IO.Abstractions.Wrappers": "19.2.69"
+        },
+        "runtime": {
+          "lib/net7.0/System.IO.Abstractions.dll": {
+            "assemblyVersion": "19.0.0.0",
+            "fileVersion": "19.2.69.58994"
+          }
+        }
+      },
+      "System.IO.Pipelines/8.0.0": {
+        "runtime": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "System.Reactive/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.1"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
+      "System.Text.Encoding.CodePages/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0"
+        }
+      },
+      "TestableIO.System.IO.Abstractions/19.2.69": {
+        "runtime": {
+          "lib/net7.0/TestableIO.System.IO.Abstractions.dll": {
+            "assemblyVersion": "19.0.0.0",
+            "fileVersion": "19.2.69.58994"
+          }
+        }
+      },
+      "TestableIO.System.IO.Abstractions.Wrappers/19.2.69": {
+        "dependencies": {
+          "TestableIO.System.IO.Abstractions": "19.2.69"
+        },
+        "runtime": {
+          "lib/net7.0/TestableIO.System.IO.Abstractions.Wrappers.dll": {
+            "assemblyVersion": "19.0.0.0",
+            "fileVersion": "19.2.69.58994"
+          }
+        }
+      },
+      "Zafiro/5.0.1": {
+        "dependencies": {
+          "CSharpFunctionalExtensions": "2.42.0",
+          "JetBrains.Annotations": "2023.3.0",
+          "Microsoft.Bcl.HashCode": "1.1.1",
+          "Microsoft.Extensions.Logging": "8.0.0",
+          "Microsoft.Reactive.Testing": "5.0.0",
+          "NodaTime": "3.0.10",
+          "Optional": "4.0.0",
+          "ReactiveUI": "20.1.1",
+          "Serilog": "2.10.0",
+          "System.IO.Abstractions": "19.2.69",
+          "System.IO.Pipelines": "8.0.0",
+          "morelinq": "4.2.0"
+        },
+        "runtime": {
+          "lib/net8.0/Zafiro.dll": {
+            "assemblyVersion": "5.0.1.0",
+            "fileVersion": "5.0.1.0"
+          }
+        }
+      },
+      "Zafiro.FileSystem/9.0.4": {
+        "dependencies": {
+          "CSharpFunctionalExtensions": "2.42.0",
+          "JetBrains.Annotations": "2023.3.0",
+          "ReactiveUI": "20.1.1",
+          "Serilog": "2.10.0",
+          "System.IO.Abstractions": "19.2.69",
+          "System.Reactive": "6.0.0",
+          "Zafiro": "5.0.1",
+          "morelinq": "4.2.0"
+        },
+        "runtime": {
+          "lib/net8.0/Zafiro.FileSystem.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.4.0"
+          }
+        }
+      },
+      "Zafiro.FileSystem.Local/9.0.4": {
+        "dependencies": {
+          "TestableIO.System.IO.Abstractions": "19.2.69",
+          "Zafiro.FileSystem": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Zafiro.FileSystem.Local.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImageStorageOptimizer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoenM.ImageSharp.ImageHash/1.3.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YybzOMYqvZ5xu+TH2ATefESFTR1DcZbGCc4BBl7fVWITP78Wng8vvjT38pLv5dyQUGXR3V9Gfo9DBBjAEYWSPQ==",
+      "path": "coenm.imagesharp.imagehash/1.3.6",
+      "hashPath": "coenm.imagesharp.imagehash.1.3.6.nupkg.sha512"
+    },
+    "CSharpFunctionalExtensions/2.42.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T2L6CXuXUNWG19YhnEk5jgfwiW6xNl+Vm5OL2W2yTRgTVH8zi5F7kOI3sgN57IqNkhGetjFn9Xd570gvXlEP1Q==",
+      "path": "csharpfunctionalextensions/2.42.0",
+      "hashPath": "csharpfunctionalextensions.2.42.0.nupkg.sha512"
+    },
+    "DynamicData/8.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mn1+fU/jqxgONEJq8KLQPGWEi7g/hUVTbjZyn4QM0sWWDAVOHPO9WjXWORSykwdfg/6S3GM15qsfz+2EvO+QAQ==",
+      "path": "dynamicdata/8.4.1",
+      "hashPath": "dynamicdata.8.4.1.nupkg.sha512"
+    },
+    "JetBrains.Annotations/2023.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PHfnvdBUdGaTVG9bR/GEfxgTwWM0Z97Y6X3710wiljELBISipSfF5okn/vz+C2gfO+ihoEyVPjaJwn8ZalVukA==",
+      "path": "jetbrains.annotations/2023.3.0",
+      "hashPath": "jetbrains.annotations.2023.3.0.nupkg.sha512"
+    },
+    "Microsoft.Bcl.HashCode/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MalY0Y/uM/LjXtHfX/26l2VtN4LDNZ2OE3aumNOHDLsT4fNYy2hiHXI4CXCqKpNUNm7iJ2brrc4J89UdaL56FA==",
+      "path": "microsoft.bcl.hashcode/1.1.1",
+      "hashPath": "microsoft.bcl.hashcode.1.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V8S3bsm50ig6JSyrbcJJ8bW2b9QLGouz+G1miK3UTaOWmMtFwNNNzUf4AleyDWUmTrWMLNnFSLEQtxmxgNQnNQ==",
+      "path": "microsoft.extensions.dependencyinjection/8.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cjWrLkJXK0rs4zofsK4bSdg+jhDLTaxrkXu4gS6Y7MAlCvRyNNgwY/lJi5RDlQOnSZweHqoyvgvbdvQsRIW+hg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tvRkov9tAJ3xP51LCv3FJ2zINmv1P8Hi8lhhtcKGqM+ImiTCC84uOPEI4z8Cdq2C3o9e+Aa0Gw0rmrsJD77W+w==",
+      "path": "microsoft.extensions.logging/8.0.0",
+      "hashPath": "microsoft.extensions.logging.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-arDBqTgFCyS0EvRV7O3MZturChstm50OJ0y9bDJvAcmEPJm0FFpFyjU/JLYyStNGGey081DvnQYlncNX5SJJGA==",
+      "path": "microsoft.extensions.logging.abstractions/8.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JOVOfqpnqlVLUzINQ2fox8evY2SKLYJ3BV8QDe/Jyp21u1T7r45x/R/5QdteURMR5r01GxeJSBBUOCOyaNXA3g==",
+      "path": "microsoft.extensions.options/8.0.0",
+      "hashPath": "microsoft.extensions.options.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bXJEZrW9ny8vjMF1JV253WeLhpEVzFo1lyaZu1vQ4ZxWUlVvknZ/+ftFgVheLubb4eZPSwwxBeqS1JkCOjxd8g==",
+      "path": "microsoft.extensions.primitives/8.0.0",
+      "hashPath": "microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
+      "path": "microsoft.netcore.platforms/5.0.0",
+      "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Reactive.Testing/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dIMpLPr7KG6aVzqIu/PlxxuXGV0rdJs5krgUZ7exfrBkFNzVLQJDXBnnovrzXOCnyZIZ0Bbsz50yLkfvtbzqTw==",
+      "path": "microsoft.reactive.testing/5.0.0",
+      "hashPath": "microsoft.reactive.testing.5.0.0.nupkg.sha512"
+    },
+    "morelinq/4.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2v+p2vUO+4+N7jwFV9XODQLOwQeXay1Gg4fvLebpQ7AL0iZdrJ/lzFTg5HfAn/DJxNXF54xZJLinMpFddcvUxg==",
+      "path": "morelinq/4.2.0",
+      "hashPath": "morelinq.4.2.0.nupkg.sha512"
+    },
+    "NodaTime/3.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ss+WtJonasLC0kA9/WXliusI+c34zIofHxluTn+6tbYSP8EX8Q1zQUFoQxt2OaqmAt23mA4H+KH/nVAZ+em3aw==",
+      "path": "nodatime/3.0.10",
+      "hashPath": "nodatime.3.0.10.nupkg.sha512"
+    },
+    "Optional/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q9NdZ39K/tPuV8JDs6ntRxW3idN9J4jSoBK/2ovld+Gh8if4Yhs+OTPvI84mN5YGAI3pzbhLcNUrm+VFKutC3Q==",
+      "path": "optional/4.0.0",
+      "hashPath": "optional.4.0.0.nupkg.sha512"
+    },
+    "ReactiveUI/20.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9hNPknWjijnaSWs6auypoXqUptPZcRpUypF+cf1zD50fgW+SEoQda502N3fVZ2eWPcaiUad+z6GaLwOWmUVHNw==",
+      "path": "reactiveui/20.1.1",
+      "hashPath": "reactiveui.20.1.1.nupkg.sha512"
+    },
+    "Serilog/2.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+QX0hmf37a0/OZLxM3wL7V6/ADvC1XihXN4Kq/p6d8lCPfgkRdiuhbWlMaFjR9Av0dy5F0+MBeDmDdRZN/YwQA==",
+      "path": "serilog/2.10.0",
+      "hashPath": "serilog.2.10.0.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/2.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8yonNRWX3vUE9k29ta0Hbfa0AEc0hbDjSH/nZ3vOTJEXmY6hLnGsjDKoz96Z+AgOsrdkAu6PdL/Ebaf70aitzw==",
+      "path": "sixlabors.imagesharp/2.1.3",
+      "hashPath": "sixlabors.imagesharp.2.1.3.nupkg.sha512"
+    },
+    "Splat/15.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RHDTdF90FwVbRia2cmuIzkiVoETqnXSB2dDBBi/I35HWXqv4OKGqoMcfcd6obMvO2OmmY5PjU1M62K8LkJafAA==",
+      "path": "splat/15.1.1",
+      "hashPath": "splat.15.1.1.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.IO.Abstractions/19.2.69": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VNc0GMVJ7df9IOupFyUrsLVwOvnba6W+lKJPeR/sDx+agPkd6LmdZkXbcURWNN1ue//uLTwP6145agO61c9gNg==",
+      "path": "system.io.abstractions/19.2.69",
+      "hashPath": "system.io.abstractions.19.2.69.nupkg.sha512"
+    },
+    "System.IO.Pipelines/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
+      "path": "system.io.pipelines/8.0.0",
+      "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
+    },
+    "System.Reactive/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-31kfaW4ZupZzPsI5PVe77VhnvFF55qgma7KZr/E0iFTs6fmdhhG8j0mgEx620iLTey1EynOkEfnyTjtNEpJzGw==",
+      "path": "system.reactive/6.0.0",
+      "hashPath": "system.reactive.6.0.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
+      "path": "system.text.encoding.codepages/5.0.0",
+      "hashPath": "system.text.encoding.codepages.5.0.0.nupkg.sha512"
+    },
+    "TestableIO.System.IO.Abstractions/19.2.69": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BHZ9uqMAPG7TId4dwJPEuofR6NjIu8AycwH8qSWTSLYUKpQzJKFMIgo7Igp37BW3oURRdIs5Dx4+W86BqvEXrg==",
+      "path": "testableio.system.io.abstractions/19.2.69",
+      "hashPath": "testableio.system.io.abstractions.19.2.69.nupkg.sha512"
+    },
+    "TestableIO.System.IO.Abstractions.Wrappers/19.2.69": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yHPZKCrsaVoA/LuZRqarYhecFJ+hUnQFXXfTvFfFaGdfKhCUYN7oo1CPgtMcr2TqLA2usGpSPZ2R7ybDWotY/g==",
+      "path": "testableio.system.io.abstractions.wrappers/19.2.69",
+      "hashPath": "testableio.system.io.abstractions.wrappers.19.2.69.nupkg.sha512"
+    },
+    "Zafiro/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2v+3Q8VUe8HYRt0dp1ZC2Gweb5n6JTEyb63M/ckgvCMeMeiE2uwz4Zbaqox4GuMCBGWVcdzZ4yOqAbnY9qjK/w==",
+      "path": "zafiro/5.0.1",
+      "hashPath": "zafiro.5.0.1.nupkg.sha512"
+    },
+    "Zafiro.FileSystem/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pjqaL/HsrHmuiNKqw4TAHdy7UvS53ZZ3fHbsEqtUxNLL1MhgoDWAp/QHHlsSRMZF0BURtj1b0VQCzOZv/0Z7OQ==",
+      "path": "zafiro.filesystem/9.0.4",
+      "hashPath": "zafiro.filesystem.9.0.4.nupkg.sha512"
+    },
+    "Zafiro.FileSystem.Local/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/SJxV18bQ6pQsq8CXkGMyzdlzcpoNxfVNsjKxtdMOxkR/dcTiE5MxMIoGLm7wFYF1M4qZeLkNtTbGZ5lkvZ/EQ==",
+      "path": "zafiro.filesystem.local/9.0.4",
+      "hashPath": "zafiro.filesystem.local.9.0.4.nupkg.sha512"
+    }
+  }
+}

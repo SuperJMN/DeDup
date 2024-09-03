@@ -14,8 +14,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Zafiro.FileSystem\src\Zafiro.FileSystem.Local\Zafiro.FileSystem.Local.csproj" />
-      <ProjectReference Include="..\..\Zafiro.UI\src\Zafiro.UI\Zafiro.UI.csproj" />
-      <ProjectReference Include="..\..\Zafiro\src\Zafiro\Zafiro.csproj" />
+      <ProjectReference Include="..\..\Zafiro.FileSystem\src\Zafiro.FileSystem\Zafiro.FileSystem.csproj" />
     </ItemGroup>
 
 </Project>

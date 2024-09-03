@@ -13,12 +13,12 @@ var algo = new AverageHash();
 
 var fs = new FileSystem(new System.IO.Abstractions.FileSystem());
 
-var input = await fs.GetDirectory("home/jmn/Escritorio/Test");
+var input = await Operations.GetFilesFrom(fs, "home/jmn/Escritorio/Test");
 var output = await fs.GetDirectory("home/jmn/Escritorio/Output");
 var files = await input.Bind(x => Operations.GetFiles(algo, x));
 
-var task = from o in output
+var execution = from o in output
     from f in files
     select Operations.CopyFilesTo(f, o);
 
-await task.UnrollBind().Log();
+await execution.UnrollBind().Log();

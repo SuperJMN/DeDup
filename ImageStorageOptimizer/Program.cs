@@ -3,7 +3,7 @@ using CSharpFunctionalExtensions;
 using ImageStorageOptimizer;
 using Serilog;
 using Zafiro.CSharpFunctionalExtensions;
-using Zafiro.FileSystem.Local;
+using FileSystem = Zafiro.FileSystem.Local.FileSystem;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()

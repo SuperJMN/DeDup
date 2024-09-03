@@ -10,7 +10,12 @@
     <ItemGroup>
       <PackageReference Include="CoenM.ImageSharp.ImageHash" Version="1.3.6" />
       <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
-      <PackageReference Include="Zafiro.FileSystem.Local" Version="10.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Zafiro.FileSystem\src\Zafiro.FileSystem.Local\Zafiro.FileSystem.Local.csproj" />
+      <ProjectReference Include="..\..\Zafiro.UI\src\Zafiro.UI\Zafiro.UI.csproj" />
+      <ProjectReference Include="..\..\Zafiro\src\Zafiro\Zafiro.csproj" />
     </ItemGroup>
 
 </Project>

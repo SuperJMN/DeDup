@@ -1,13 +1,17 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using CoenM.ImageHash;
 using CoenM.ImageHash.HashAlgorithms;
 using CSharpFunctionalExtensions;
+using Serilog;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using Zafiro;
-using Zafiro.CSharpFunctionalExtensions;
 using Zafiro.FileSystem.Core;
 using Zafiro.FileSystem.Mutable;
 using Zafiro.FileSystem.Readonly;
+using Zafiro.Misc;
 
 namespace ImageStorageOptimizer;
 
@@ -16,11 +20,14 @@ public static class Operations
     public static async Task<Result<IEnumerable<IFile>>> GetFiles(AverageHash algo, IMutableDirectory dir)
     {
         return await dir.ToDirectory()
-            .Map(directory => directory.RootedFiles().Where(x => new[] { "jpg", "bmp", "gif", "png" }.Contains(x.FullPath().Extension().GetValueOrDefault(""))))
-            .MapEach(async file =>
+            .Map(directory => directory.AllFiles().Where(x => new[] { "jpg", "bmp", "gif", "png" }.Contains(((ZafiroPath)x.Name).Extension().GetValueOrDefault(""))))
+            .Bind(files =>
             {
-                var image = Image.Load<Rgba32>(file.Bytes());
-                return (Hash: algo.Hash(image), File: file.Value);
+                return files.Select(file =>
+                {
+                    return Result.Try(() => Image.Load<Rgba32>(file.Bytes()))
+                        .Map(x => (Hash: algo.Hash(x), File: file));
+                }).Combine();
             }).Map(hashedFiles => Operations.SelectFiles(hashedFiles.ToList()));
     }
     
@@ -44,9 +51,28 @@ public static class Operations
         return file.Length;
     }
 
-    public static async Task CopyFilesTo(IEnumerable<IFile> files, IMutableDirectory output)
+    public static async Task<Result> CopyFilesTo(IEnumerable<IFile> files, IMutableDirectory output)
     {
-        var enumerableOfTaskResults = files.Select(file => output.CreateFileWithContents(file.Name, file));
-        await enumerableOfTaskResults.CombineInOrder();
+        var enumerableOfTaskResults = files.ToList().Select(file => CreateNewFile(output, file));
+        return await enumerableOfTaskResults.CombineInOrder();
+    }
+
+    private static Task<Result> CreateNewFile(IMutableDirectory output, IFile file)
+    {
+        var name = StringUtil.GetNewName(
+            file.Name, 
+            name => output.HasFile(name)
+                .TapIf(exists => exists, () => Log.Warning("Filename '{Name}' exists. Choosing a new one.", name))
+                .Map(x => !x),
+            (s, i) =>
+            {
+                var zafiroPath = (ZafiroPath)s;
+                var newName = zafiroPath.NameWithoutExtension() + "_conflict_" + i + "." + zafiroPath.Extension();
+                return newName;
+            });
+        
+        return name
+            .Tap(n => Log.Information("Copying file {File} to {Name}", file, n))
+            .Bind(finalName => output.CreateFileWithContents(finalName, file));        
     }
 }

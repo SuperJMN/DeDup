@@ -29,14 +29,16 @@ public static class Operations
             .Map(x => x.Flatten());
     } 
     
-    public static async Task<Result<IEnumerable<IFile>>> GetFiles(AverageHash algo, IEnumerable<IFile> files)
+    public static async Task<Result<IEnumerable<IFile>>> GetUniqueFiles(AverageHash algo, IEnumerable<IFile> files)
     {
         var filtered = files.Where(x => new[] { "jpg", "bmp", "gif", "png" }.Contains(((ZafiroPath)x.Name).Extension().GetValueOrDefault("")));
 
         var hashedFiles = filtered
             .Select(file =>
             {
-                return Result.Try(() => Image.Load<Rgba32>(file.Bytes()))
+                return Result.Success()
+                    .LogInfo("Processing file {File}", file)
+                    .MapTry(() => Image.Load<Rgba32>(file.Bytes()))
                     .Map(x => (Hash: algo.Hash(x), File: file));
             });
 

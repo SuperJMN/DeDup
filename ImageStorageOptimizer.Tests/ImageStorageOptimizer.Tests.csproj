@@ -21,8 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\External\Dbscan\DbscanImplementation\DbscanImplementation.csproj" />
       <ProjectReference Include="..\ImageStorageOptimizer\ImageStorageOptimizer.csproj" />
     </ItemGroup>
-
+    
 </Project>

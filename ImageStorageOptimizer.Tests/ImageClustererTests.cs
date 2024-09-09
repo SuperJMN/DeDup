@@ -1,5 +1,3 @@
-using DbscanImplementation;
-
 namespace ImageStorageOptimizer.Tests;
 
 public class ImageClustererTests

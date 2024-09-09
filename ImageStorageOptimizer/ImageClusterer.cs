@@ -1,4 +1,4 @@
-using DbscanImplementation;
+using Dbscan;
 using Serilog;
 using Zafiro.Mixins;
 

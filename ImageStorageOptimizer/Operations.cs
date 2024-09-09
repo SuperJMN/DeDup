@@ -7,7 +7,6 @@ using Zafiro.FileSystem.Mutable;
 using Zafiro.FileSystem.Readonly;
 using Zafiro.Misc;
 using Zafiro.Mixins;
-using IFile = Zafiro.FileSystem.Readonly.IFile;
 
 namespace ImageStorageOptimizer;
 
@@ -20,11 +19,6 @@ public static class Operations
                 .Map(dir => dir.AllFiles()))
             .CombineSequentially()
             .Map(x => x.Flatten());
-    }
-
-    public static Task<Result> CopyFilesTo(IEnumerable<IFile> files, IMutableDirectory output)
-    {
-        return files.ToList().Select(file => CreateNewFile(output, file)).CombineInOrder();
     }
 
     private static Task<Result> CreateNewFile(IMutableDirectory output, IFile file)
@@ -55,12 +49,12 @@ public static class Operations
         var maybeExtension = ((ZafiroPath)argName).Extension();
         return maybeExtension.Map(ext => extensions.Contains(ext)).GetValueOrDefault();
     }
-    
-    public static double CalculateHash(HashedImageFile a, HashedImageFile b)
+
+    public static double CalculateDistance(HashedImageFile a, HashedImageFile b)
     {
         return 1 - CompareHash.Similarity(a.Hash, b.Hash) / 100;
     }
-    
+
     public static HashedImageFile ChooseImage(IEnumerable<HashedImageFile> enumerable)
     {
         return enumerable.OrderByDescending(x => x.File.Length).First();

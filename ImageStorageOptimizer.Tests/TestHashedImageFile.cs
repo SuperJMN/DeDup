@@ -8,6 +8,7 @@ public class TestHashedImageFile
         Y = y;
         Quality = quality;
     }
+
     public int Quality { get; }
     public double X { get; }
     public double Y { get; }

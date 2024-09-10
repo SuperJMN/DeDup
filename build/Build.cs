@@ -58,9 +58,9 @@ class Build : NukeBuild
             var windowsFiles = Task.FromResult(Actions.CreateWindowsPacks());
             var options = Options();
             Debugger.Launch();
-            //var linuxAppImageFiles = Actions.CreateLinuxAppImages(options);
+            var linuxAppImageFiles = Actions.CreateLinuxAppImages(options);
             
-            var allFiles = new[] { windowsFiles/*, linuxAppImageFiles*/, }.Combine();
+            var allFiles = new[] { windowsFiles, linuxAppImageFiles, }.Combine();
             await allFiles
                 .Tap(allFiles => Log.Information("Published @{AllFiles}", allFiles))
                 .TapError(e => throw new ApplicationException(e));
@@ -75,8 +75,8 @@ class Build : NukeBuild
             var windowsFiles = Task.FromResult(Actions.CreateWindowsPacks());
             var options = Options();
             Debugger.Launch();
-            //var linuxAppImageFiles = Actions.CreateLinuxAppImages(options);
-            var allFiles = new[] { windowsFiles /*, linuxAppImageFiles*/, }.Combine();
+            var linuxAppImageFiles = Actions.CreateLinuxAppImages(options);
+            var allFiles = new[] { windowsFiles, linuxAppImageFiles, }.Combine();
             await allFiles
                 .Bind(paths => Actions.CreateGitHubRelease(GitHubAuthenticationToken, paths.Flatten().ToArray()))
                 .TapError(e => throw new ApplicationException(e));

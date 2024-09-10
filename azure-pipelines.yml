@@ -8,4 +8,4 @@ steps:
 
   - powershell: .\build.ps1
     env:
-      NuGetApiKey: $(GitHubApiKey)
+      GitHubAuthenticationToken: $(GitHubApiKey)

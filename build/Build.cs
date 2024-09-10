@@ -49,39 +49,34 @@ class Build : NukeBuild
             Log.Information("Deleting {Dirs}", absolutePaths);
             absolutePaths.DeleteDirectories();
         });
-
-    Target RestoreWorkloads => td => td
-        .Executes(() =>
-        {
-            DotNetWorkloadRestore(x => x.SetProject(Solution));
-        });
     
     Target PackAll => td => td
-        .DependsOn(RestoreWorkloads)
         .OnlyWhenStatic(() => Repository.IsOnMainOrMasterBranch())
+        .DependsOn(Clean)
         .Executes(async () =>
         {
             var windowsFiles = Task.FromResult(Actions.CreateWindowsPacks());
             var options = Options();
             Debugger.Launch();
-            var linuxAppImageFiles = Actions.CreateLinuxAppImages(options);
+            //var linuxAppImageFiles = Actions.CreateLinuxAppImages(options);
             
-            var allFiles = new[] { windowsFiles, linuxAppImageFiles, }.Combine();
+            var allFiles = new[] { windowsFiles/*, linuxAppImageFiles*/, }.Combine();
             await allFiles
                 .Tap(allFiles => Log.Information("Published @{AllFiles}", allFiles))
                 .TapError(e => throw new ApplicationException(e));
         });
 
     Target PublishGitHubRelease => td => td
-        .DependsOn(RestoreWorkloads)
         .OnlyWhenStatic(() => Repository.IsOnMainOrMasterBranch())
+        .DependsOn(Clean)
         .Requires(() => GitHubAuthenticationToken)
         .Executes(async () =>
         {
             var windowsFiles = Task.FromResult(Actions.CreateWindowsPacks());
             var options = Options();
-            var linuxAppImageFiles = Actions.CreateLinuxAppImages(options);
-            var allFiles = new[] { windowsFiles, linuxAppImageFiles, }.Combine();
+            Debugger.Launch();
+            //var linuxAppImageFiles = Actions.CreateLinuxAppImages(options);
+            var allFiles = new[] { windowsFiles /*, linuxAppImageFiles*/, }.Combine();
             await allFiles
                 .Bind(paths => Actions.CreateGitHubRelease(GitHubAuthenticationToken, paths.Flatten().ToArray()))
                 .TapError(e => throw new ApplicationException(e));
@@ -100,20 +95,18 @@ class Build : NukeBuild
             AppName = "ImageStorageOptimizer",
             Version = GitVersion.MajorMinorPatch,
             Comment = "Remove duplicates pictures from your collection",
-            AppId = "com.SuperJMN.AvaloniaSyncer",
+            AppId = "com.SuperJMN.ImageStorageOptimizer",
             StartupWmClass = "ImageStorageOptimizer",
             HomePage = new Uri("https://github.com/SuperJMN/ImageStorageOptimizer"),
             Keywords = new List<string>
             {
-                "File Synchronization",
-                "Cross-Platform",
-                "AvaloniaUI",
-                "Avalonia",
-                "File Management",
-                "Folder Sync",
-                "UI Design",
-                "Open Source",
-                "Reactive Programming"
+                "Duplicate",
+                "Optimize",
+                "Picture",
+                "Photos",
+                "Images",
+                "Shrink",
+                "Compact",
             },
             License = "MIT",
             //ScreenshotUrls = Maybe.From(screenShots),

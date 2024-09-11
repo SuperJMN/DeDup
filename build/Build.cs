@@ -51,9 +51,9 @@ class Build : NukeBuild
     Target PackAll => td => td
         .OnlyWhenStatic(() => Repository.IsOnMainOrMasterBranch())
         .DependsOn(Clean)
-        .Executes(() =>
+        .Executes(async () =>
         {
-            Solution.Projects
+            await Solution.Projects
                 .TryFirst(x => x.GetOutputType().Contains("Exe", StringComparison.InvariantCultureIgnoreCase))
                 .ToResult("Could not find the executable project")
                 .Map(project =>
@@ -74,9 +74,9 @@ class Build : NukeBuild
         .OnlyWhenStatic(() => Repository.IsOnMainOrMasterBranch())
         .DependsOn(Clean)
         .Requires(() => GitHubAuthenticationToken)
-        .Executes(() =>
+        .Executes(async () =>
         {
-            return Solution.Projects
+            await Solution.Projects
                 .TryFirst(x => x.GetOutputType().Contains("Exe", StringComparison.InvariantCultureIgnoreCase))
                 .ToResult("Could not find the executable project")
                 .Map(project =>

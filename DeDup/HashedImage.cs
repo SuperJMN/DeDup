@@ -6,11 +6,11 @@ using SixLabors.ImageSharp.PixelFormats;
 using Zafiro.FileSystem.Core;
 using Zafiro.FileSystem.Readonly;
 
-namespace ImageStorageOptimizer;
+namespace DuplicateFinder;
 
-public class HashedImageFile
+public class HashedImage
 {
-    private HashedImageFile(Image<Rgba32> image, ulong hash, IFile file)
+    private HashedImage(Image<Rgba32> image, ulong hash, IFile file)
     {
         Image = image;
         Hash = hash;
@@ -26,13 +26,13 @@ public class HashedImageFile
         return $"{File} ({Image.Width}x{Image.Height} - {ByteSize.FromBytes(File.Length)})";
     }
 
-    public static async Task<Result<HashedImageFile>> Create(IFile file, IImageHash imageHash)
+    public static async Task<Result<HashedImage>> Create(IFile file, IImageHash imageHash)
     {
         return Result.Try(() => SixLabors.ImageSharp.Image.Load<Rgba32>(file.Bytes()))
             .Map(image =>
             {
                 var hash = imageHash.Hash(image);
-                return new HashedImageFile(image, hash, file);
+                return new HashedImage(image, hash, file);
             });
     }
 }

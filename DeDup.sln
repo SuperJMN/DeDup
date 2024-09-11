@@ -1,10 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageStorageOptimizer", "ImageStorageOptimizer\ImageStorageOptimizer.csproj", "{B3E2B371-5037-4CC3-B9EC-FF9A804710F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeDup.Console", "DeDup.Console\DeDup.Console.csproj", "{B3E2B371-5037-4CC3-B9EC-FF9A804710F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageStorageOptimizer.Tests", "ImageStorageOptimizer.Tests\ImageStorageOptimizer.Tests.csproj", "{58374042-D58E-4E6A-8847-446945809275}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeDup.Tests", "DeDup.Tests\DeDup.Tests.csproj", "{58374042-D58E-4E6A-8847-446945809275}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{551BF29B-4CB4-465E-87D5-61816CF9564F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeDup", "DeDup\DeDup.csproj", "{A3E20B68-9D5B-4BE7-92D7-B84E95FC1E75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,5 +24,9 @@ Global
 		{58374042-D58E-4E6A-8847-446945809275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58374042-D58E-4E6A-8847-446945809275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58374042-D58E-4E6A-8847-446945809275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E20B68-9D5B-4BE7-92D7-B84E95FC1E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E20B68-9D5B-4BE7-92D7-B84E95FC1E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E20B68-9D5B-4BE7-92D7-B84E95FC1E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E20B68-9D5B-4BE7-92D7-B84E95FC1E75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

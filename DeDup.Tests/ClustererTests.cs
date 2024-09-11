@@ -1,20 +1,20 @@
-namespace ImageStorageOptimizer.Tests;
+namespace DuplicateFinder.Tests;
 
 public class ClustererTests
 {
     [Fact]
     public void Test_clustering()
     {
-        var imageProcessor = new Clusterer<TestHashedImageFile>(
+        var imageProcessor = new Clusterer<TestHashedImage>(
             (a, b) => CalcularDistanciaNormalizada(a.X, a.Y, b.X, b.Y));
 
         var list = imageProcessor.GetClusters([
-            new TestHashedImageFile(0, 0, 98),
-            new TestHashedImageFile(0, 1, 90),
-            new TestHashedImageFile(4, 4, 100),
-            new TestHashedImageFile(20000, 2000, 94),
-            new TestHashedImageFile(2000, 2000, 94),
-            new TestHashedImageFile(400, 340, 94)
+            new TestHashedImage(0, 0, 98),
+            new TestHashedImage(0, 1, 90),
+            new TestHashedImage(4, 4, 100),
+            new TestHashedImage(20000, 2000, 94),
+            new TestHashedImage(2000, 2000, 94),
+            new TestHashedImage(400, 340, 94)
         ], 0.95);
 
         Assert.Equal(3, list.Count); // Esperamos 3 clusters

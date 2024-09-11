@@ -1,8 +1,8 @@
-namespace ImageStorageOptimizer.Tests;
+namespace DuplicateFinder.Tests;
 
-public class TestHashedImageFile
+public class TestHashedImage
 {
-    public TestHashedImageFile(double x, double y, int quality)
+    public TestHashedImage(double x, double y, int quality)
     {
         X = x;
         Y = y;

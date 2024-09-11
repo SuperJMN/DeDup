@@ -1,9 +1,10 @@
 ﻿using CoenM.ImageHash.HashAlgorithms;
 using CommandLine;
 using CSharpFunctionalExtensions;
-using ImageStorageOptimizer;
 using Serilog;
 using Zafiro.FileSystem.Core;
+
+namespace DuplicateFinder.Console;
 
 internal class Program
 {
@@ -29,7 +30,7 @@ internal class Program
     }
 
     private static async Task<int> RunOperationAsync(CommonOptions opts,
-        Func<ImageStore, IEnumerable<ZafiroPath>, ZafiroPath, double, Task<Result>> operation)
+        Func<global::DuplicateFinder.DuplicateFinder, IEnumerable<ZafiroPath>, ZafiroPath, double, Task<Result>> operation)
     {
         Log.Logger = new LoggerConfiguration()
             .WriteTo.Console()
@@ -46,7 +47,7 @@ internal class Program
         var destination = opts.OutputDirectory;
         var sources = opts.InputDirectories.Select(path => (ZafiroPath)path).ToArray();
 
-        var store = new ImageStore(new AverageHash());
+        var store = new global::DuplicateFinder.DuplicateFinder(new AverageHash());
         var result = await operation(store, sources, destination, similarityThreshold);
 
         if (result.IsFailure)
@@ -58,26 +59,4 @@ internal class Program
         Log.Information("Operation completed successfully.");
         return 0;
     }
-}
-
-[Verb("copyunique", HelpText = "Keep unique images and remove duplicates.")]
-public class CopyUniqueImagesOptions : CommonOptions
-{
-}
-
-[Verb("copyduplicates", HelpText = "Copy duplicate images to the output directory.")]
-public class CopyDuplicateImagesOptions : CommonOptions
-{
-}
-
-public class CommonOptions
-{
-    [Option('o', "output", Required = true, HelpText = "Output directory for processed images.")]
-    public string OutputDirectory { get; set; }
-
-    [Option('t', "threshold", Required = true, HelpText = "Similarity threshold (0 to 100).")]
-    public int SimilarityThresholdPercentage { get; set; }
-
-    [Option('i', "input", Required = true, Min = 1, HelpText = "Input directories to search for images.")]
-    public IEnumerable<string> InputDirectories { get; set; }
 }

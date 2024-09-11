@@ -1,6 +1,6 @@
 using Dbscan;
 
-namespace ImageStorageOptimizer;
+namespace DuplicateFinder;
 
 public class Clusterer<T>(Func<T, T, double> imageDistance)
 {

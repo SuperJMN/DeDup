@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using DotnetPackaging;
 using Nuke.Common;
@@ -11,7 +10,6 @@ using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tools.GitVersion;
 using Serilog;
-using Zafiro.Mixins;
 using Zafiro.Nuke;
 using Maybe = CSharpFunctionalExtensions.Maybe;
 
@@ -56,18 +54,15 @@ class Build : NukeBuild
             await Solution.Projects
                 .TryFirst(x => x.GetOutputType().Contains("Exe", StringComparison.InvariantCultureIgnoreCase))
                 .ToResult("Could not find the executable project")
-                .Map(project =>
+                .Bind(project =>
                 {
-                    var windowsFiles = Task.FromResult(Actions.CreateZip(project));
-                    var options = Options();
-                    Debugger.Launch();
-                    var linuxAppImageFiles = Actions.CreateAppImages(project, options);
-
-                    var allFiles = new[] { windowsFiles, linuxAppImageFiles, }.Combine();
-                    return allFiles
+                    return new DeploymentBuilder(Actions, project)
+                        .ForLinux(Options())
+                        .ForWindows()
+                        .Build()
                         .Tap(allFiles => Log.Information("Published @{AllFiles}", allFiles));
-                }).TapError(e => throw new ApplicationException(e));
-            ;
+                })
+                .TapError(err => throw new ApplicationException(err));;
         });
 
     Target PublishGitHubRelease => td => td
@@ -79,17 +74,15 @@ class Build : NukeBuild
             await Solution.Projects
                 .TryFirst(x => x.GetOutputType().Contains("Exe", StringComparison.InvariantCultureIgnoreCase))
                 .ToResult("Could not find the executable project")
-                .Map(project =>
+                .Bind(project =>
                 {
-                    var windowsFiles = Task.FromResult(Actions.CreateZip(project));
-                    var options = Options();
-                    Debugger.Launch();
-                    var linuxAppImageFiles = Actions.CreateAppImages(project, options);
-
-                    var allFiles = new[] { windowsFiles, linuxAppImageFiles, }.Combine();
-                    return allFiles
-                        .Bind(paths => Actions.CreateGitHubRelease(GitHubAuthenticationToken, paths.Flatten().ToArray()));
-                });
+                    return new DeploymentBuilder(Actions, project)
+                        .ForLinux(Options())
+                        .ForWindows()
+                        .Build()
+                        .Bind(paths => Actions.CreateGitHubRelease(GitHubAuthenticationToken, paths.ToArray()));
+                })
+                .TapError(err => throw new ApplicationException(err));
         });
 
     public static int Main() => Execute<Build>(x => x.PublishGitHubRelease);
@@ -102,10 +95,10 @@ class Build : NukeBuild
         {
             MainCategory = MainCategory.Utility,
             AdditionalCategories = Maybe.From(additionalCategories),
-            AppName = "DeDup",
+            Name = "DeDup",
             Version = GitVersion.MajorMinorPatch,
             Comment = "Remove duplicates pictures from your collection",
-            AppId = "com.SuperJMN.DeDup",
+            Id = "com.SuperJMN.DeDup",
             StartupWmClass = "DeDup",
             HomePage = new Uri("https://github.com/SuperJMN/DeDup"),
             Keywords = new List<string>

@@ -46,7 +46,7 @@ class Build : NukeBuild
             Log.Information("Deleting {Dirs}", absolutePaths);
             absolutePaths.DeleteDirectories();
         });
-
+    
     Target PackAll => td => td
         .OnlyWhenStatic(() => Repository.IsOnMainOrMasterBranch())
         .DependsOn(Clean)
@@ -59,6 +59,24 @@ class Build : NukeBuild
                 {
                     return new DeploymentBuilder(Actions, project)
                         .ForLinux(Options())
+                        .ForWindows()
+                        .Build()
+                        .Tap(allFiles => Log.Information("Published @{AllFiles}", allFiles));
+                })
+                .TapError(err => throw new ApplicationException(err));;
+        });
+    
+    Target PackWindows => td => td
+        .OnlyWhenStatic(() => Repository.IsOnMainOrMasterBranch())
+        .DependsOn(Clean)
+        .Executes(async () =>
+        {
+            await Solution.Projects
+                .TryFirst(x => x.GetOutputType().Contains("Exe", StringComparison.InvariantCultureIgnoreCase))
+                .ToResult("Could not find the executable project")
+                .Bind(project =>
+                {
+                    return new DeploymentBuilder(Actions, project)
                         .ForWindows()
                         .Build()
                         .Tap(allFiles => Log.Information("Published @{AllFiles}", allFiles));

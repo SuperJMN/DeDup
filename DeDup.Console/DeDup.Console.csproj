@@ -9,6 +9,7 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>dedup</ToolCommandName>
         <RootNamespace>DuplicateFinder.Console</RootNamespace>
+        <AssemblyName>DeDup</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>

@@ -41,7 +41,8 @@ class Build : NukeBuild
         .Executes(() =>
         {
             OutputDirectory.CreateOrCleanDirectory();
-            var absolutePaths = RootDirectory.GlobDirectories("**/bin", "**/obj").Where(a => !((string)a).Contains("build")).ToList();
+            var absolutePaths = RootDirectory.GlobDirectories("**/bin", "**/obj")
+                .Append(OutputDirectory).Where(a => !((string)a).Contains("build")).ToList();
             Log.Information("Deleting {Dirs}", absolutePaths);
             absolutePaths.DeleteDirectories();
         });

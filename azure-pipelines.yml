@@ -1,0 +1,12 @@
+variables:
+  - group: api-keys
+  - name: Agent.Source.Git.ShallowFetchDepth
+    value: 0
+
+steps:
+  - checkout: self
+
+  - powershell: .\build.ps1
+    env:
+      GitHubAuthenticationToken: $(GitHubApiKey)
+      NuGetApiKey: $(NuGetApiKey)

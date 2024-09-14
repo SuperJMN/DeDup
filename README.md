@@ -72,3 +72,8 @@ MIT
 ## Support
 
 Catch me in X [@SuperJMN](https://www.x.com/SuperJMN) or file an issue ;)
+
+## Acknowledgements
+
+The icon is made by [RimshotDesign (Cyril Seillet)](https://icon-icons.com/users/jVW86S7Rn2wuzeroi9Q2N/icon-sets/)
+

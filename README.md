@@ -7,7 +7,7 @@ This command-line tool helps you clean up your image library by identifying and 
 
 ## Get it
 
-1. Go to the [Releases](https://github.com/superjmn/deduo/releases) section of this repository.
+1. Go to the [Releases](https://github.com/superjmn/dedup/releases) section of this repository.
 2. Download the appropriate version for your operating system:
    - For Windows: Download the `.exe` file.
    - For Linux: Download the `.AppImage` file for your architecture.
